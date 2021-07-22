@@ -1,0 +1,14 @@
+server:
+  port: 8000
+eureka:
+  instance:
+    hostname: eureka-center
+    appname: eureka-center
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka
+  server:
+    enableSelfPreservation: false
+    evictionIntervalTimerInMs: 4000
