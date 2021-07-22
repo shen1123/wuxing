@@ -1,0 +1,29 @@
+server:
+  port: 8002
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/   #测试
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#logging:
+#  config: classpath:conf/logback-dev.xml
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:test/
+        bootstrap: true
+  application:
+    name: config-server
+  profiles:
+    #  标明使用本地
+    active: native
+  security:
+    user:
+      name: carl
+      password: 123
+
